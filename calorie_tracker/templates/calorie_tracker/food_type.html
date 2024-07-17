@@ -1,0 +1,36 @@
+{%extends 'calorie_tracker/base.html' %} #inheritance
+
+{%block content%}
+<h1 class="text-3xl font-bold>Food Types</h1>
+<p>Total Calories: {{ total_calories }}</p>
+
+<table>
+    <tr>
+        <th class="text-3xl font-bold" >Name</th>
+        <th>Calories</th>
+        <th>Actions</th>
+    </tr>
+    {% for food in foods %}
+    <tr>
+        <td>{{ food.name }}</td>
+        <td>{{ food.calories }}</td>
+        <td>
+            <a href="{% url 'edit_food' food.id %}">Edit</a>
+            <a href="{% url 'delete_food' food.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+{%endblock content%}

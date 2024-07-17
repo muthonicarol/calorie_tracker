@@ -21,4 +21,12 @@ from calorie_tracker import views
 urlpatterns = [
     path('admin/', admin.site.urls),
      path('', views.food_types, name = 'food_types'),
+     
+
+
+
+
+
 ]
+
+

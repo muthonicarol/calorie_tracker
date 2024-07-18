@@ -1,26 +1,27 @@
 {%extends 'calorie_tracker/base.html' %} #inheritance
 
 {%block content%}
-<h1 class="text-3xl font-bold>Food Types</h1>
-<p>Total Calories: {{ total_calories }}</p>
-
-<table>
+<h1  class="text-4xl font-bold text-center mt-10"> Food Types</h1>
+<p class="text-2xl font-semibold text-center text-green-600 mt-4">Total Calories: {{ total_calories }}</p>
+<div class="flex justify-center mt-8">
+<table class= "border-separate border-spacing-2 border border-slate-500 bg-cyan-50 w-3/4">
     <tr>
-        <th class="text-3xl font-bold" >Name</th>
-        <th>Calories</th>
-        <th>Actions</th>
+        <th class="px-4 py-2">Name</th>
+        <th class="px-4 py-2">Calories</th>
+        <th class="px-4 py-2">Actions</th>
     </tr>
     {% for food in foods %}
-    <tr>
-        <td>{{ food.name }}</td>
-        <td>{{ food.calories }}</td>
-        <td>
-            <button>Edit</button>
-            <button>Delete</button>
+    <tr class="font-bold">
+        <td class="border px-4 py-2">{{ food.name }}</td>
+        <td class="border px-4 py-2">{{ food.calories }}</td>
+        <td class="border px-4 py-2">
+            <a href="#" class="text-blue-500">Edit</a>
+                <a href="#" class="text-red-500 ml-2">Delete</a>
         </td>
     </tr>
     {% endfor %}
 </table>
+</div>
 
 
 
